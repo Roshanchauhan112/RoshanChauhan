@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshan Developer | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="./assets/style.css">
+        <link rel="stylesheet" href="./assets/responsive.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        /* Prevent horizontal overflow */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure containers stay within bounds */
+.container {
+    max-width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding-top: 6rem;
+        text-align: center;
+    }
+    
+    .hero__buttons {
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .hero__image {
+        margin-top: 2rem;
+        max-width: 100%;
+    }
+    
+    /* Prevent animation elements from causing overflow */
+    [class*="animate-"] {
+        transform: none !important;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#home" class="logo">Roshan Developer</a>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle desktop-only" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn mobile-only" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header> 
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-theme-toggle">
+            <button class="theme-toggle" id="mobileThemeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+
+    <style>
+    /* Add these styles to your CSS */
+    @media (max-width: 768px) {
+        .desktop-only {
+            display: none !important;
+        }
+        .mobile-only {
+            display: block !important;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .desktop-only {
+            display: block !important;
+        }
+        .mobile-only {
+            display: none !important;
+        }
+    }
+    </style>
+
+    <!-- Hero Section -->
+    <section id="home" class="section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h3 class="hero-subtitle">Hello, I'm</h3>
+                    <h1 class="hero-title"><span id="animated-name">Roshan Developer</span></h1>
+                    <h2 class="hero-subtitle">Full Stack Developer</h2>
+                    <p class="hero-description">
+                        I build exceptional digital experiences that are fast, accessible, and visually appealing.
+                        With expertise in both frontend and backend development, I create seamless web applications.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/" class="social-link" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/roshan-chauhan-" class="social-link" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/ROSHANC39744026?t=oLUuFoTkORlNn6_XU9gHqw&s=09" class="social-link"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/roshan_chauhan112/" class="social-link"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="./images/profile-pic.jpg" alt="Roshan Developer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="./images/profile-pic.jpg" alt="About Roshan">
+                </div>
+                <div class="about-text">
+                    <h3 class="about-title">Who am I?</h3>
+                    <p class="about-description">
+                        Hi! I'm Roshan Chauhan, a web developer who loves building websites and apps. I started coding
+                        in college
+                        and since then I've been creating lots of cool projects for real customers.
+                    </p>
+                    <p class="about-description">
+                        I work with both front-end (what you see) and back-end (how it works) technologies. I build
+                        everything
+                        from simple websites to complex systems that help businesses manage their work better. Some of
+                        my favorite
+                        tools are PHP, JavaScript, and React.
+                    </p>
+                    <p class="about-description"></p>
+                    I'm also learning new things like MongoDB, React, and Node.js to make even better websites.
+                    I enjoy solving problems and making websites that are easy to use and look great on all devices.
+                    </p>
+
+                    <div class="about-skills">
+                        <h4 style="padding-bottom: 20px;">My Skills</h4>
+                        <ul class="skills-list">
+                            <li class="skill-item">PHP</li>
+                            <li class="skill-item">HTML/CSS</li>
+                            <li class="skill-item">JavaScript</li>
+                            <li class="skill-item">React</li>
+                            <li class="skill-item">Node.js</li>
+                            <li class="skill-item">MongoDB</li>
+                            <li class="skill-item">MySQL</li>
+                            <li class="skill-item">Bootstrap</li>
+                            <li class="skill-item">Git</li>
+                            <li class="skill-item">Web Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+
+                <!-- PHP -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fab fa-php skill-icon"></i> PHP</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="95%"></div>
+                    </div>
+                    <p>Expertise in core PHP, OOP, and backend architecture for web development.</p>
+                </div>
+
+                <!-- MySQL -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fas fa-database skill-icon"></i> MySQL</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                    <p>Efficient in relational database design, complex queries, joins, and optimization.</p>
+                </div>
+
+                <!-- Laravel -->
+                <!-- <div class="skill-card">
+                <h3 class="skill-title"><i class="fab fa-laravel skill-icon"></i> Laravel</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="90%"></div>
+                </div>
+                <p>Developing full-stack Laravel applications with MVC pattern, Blade, and Eloquent ORM.</p>
+            </div> -->
+
+                <!-- HTML/CSS -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fab fa-html5 skill-icon"></i> HTML/CSS</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="95%"></div>
+                    </div>
+                    <p>Creating modern, responsive, and accessible UIs using HTML5, CSS3, and Tailwind/Bootstrap.</p>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fab fa-js skill-icon"></i> JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                    <p>Interactive UI development, event handling, form validation, and API integration.</p>
+                </div>
+
+                <!-- Git & GitHub -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fab fa-git-alt skill-icon"></i> Git & GitHub</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                    <p>Version control, collaborative workflow, and project management via GitHub.</p>
+                </div>
+
+                <!-- cPanel / Hosting -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fas fa-server skill-icon"></i> cPanel & Hosting</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80%"></div>
+                    </div>
+                    <p>Deploying PHP projects, domain setup, FTP, SSL, and database management via cPanel.</p>
+                </div>
+
+                <!-- Graphic Design -->
+                <div class="skill-card">
+                    <h3 class="skill-title"><i class="fas fa-paint-brush skill-icon"></i> Graphic Design</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                    <p>Proficient in Adobe Photoshop, Illustrator, and Canva for designing logos, posters, and social
+                        media creatives.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-container">
+                <!-- CRM System -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./images/crm.jpeg" alt="CRM System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">CRM Management System</h3>
+                        <p class="project-description">
+                            A powerful CRM tailored for Coaching Centers, Travel Agents, and Service Providers with lead
+                            tracking, follow-ups, and analytics.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-item">PHP</span>
+                            <span class="tech-item">MySQL</span>
+                            <span class="tech-item">jQuery</span>
+                            <span class="tech-item">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-outline">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medicure Care App -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./images/medical management system.jpeg" alt="Medicure Care">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Medicure Care</h3>
+                        <p class="project-description">
+                            A medical management system to sell medicines online, book appointments, and track
+                            prescriptions for patients.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-item">PHP</span>
+                            <span class="tech-item">JavaScript</span>
+                            <span class="tech-item">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://medicurecare.com/" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-outline">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Travel Management System -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./images/Travel Booking Portal.jpeg" alt="Travel Website">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Travel Booking Portal</h3>
+                        <p class="project-description">
+                            A travel platform for booking tours, managing packages, and handling custom itineraries with
+                            user-friendly UI.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-item">PHP</span>
+                            <span class="tech-item">MySQL</span>
+                            <span class="tech-item">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-outline">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- School ID Card Generator -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./images/Schools Website.jpeg" alt="School System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Schools Website</h3>
+                        <p class="project-description">
+                            Complete school website with student/staff management, online admission, fees tracking,
+                            attendance, and exam results portal. Custom admin panel for content management.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-item">PHP</span>
+                            <span class="tech-item">HTML/CSS</span>
+                            <span class="tech-item">JS</span>
+                            <span class="tech-item">TCPDF</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="http://Niitcomputer.co.in" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-outline">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coaching Institute Portal -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./images/Coaching Institute Portal.jpeg" alt="Coaching Institute Portal">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Coaching Institute Portal</h3>
+                        <p class="project-description">
+                            Complete management system for coaching institutes with student records, class scheduling,
+                            attendance tracking, and performance analytics.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-item">PHP</span>
+                            <span class="tech-item">MySQL</span>
+                            <span class="tech-item">Tailwind</span>
+                            <span class="tech-item">jQuery</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="http://Niitcomputer.co.in" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-outline">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Online Banquet Booking System -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./images/Online Banquet Booking .jpeg" alt="Online Banquet Booking System">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Online Banquet Booking System</h3>
+                        <p class="project-description">
+                            A comprehensive system for booking banquet halls, managing events, tracking availability, and handling customer reservations with online payments.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-item">PHP</span>
+                            <span class="tech-item">MySQL</span>
+                            <span class="tech-item">Bootstrap</span>
+                            <span class="tech-item">jQuery</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://utsavlawn.devdi.in" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-outline">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROI Calculator System -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./images/Investment ROI System.jpeg" alt="ROI Calculator">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Investment ROI System</h3>
+                        <p class="project-description">
+                            A platform for tracking investment returns on listed products with daily ROI of 2.5%. Features investment tracking, automated daily return calculations, and detailed performance reports.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-item">PHP</span>
+                            <span class="tech-item">MySQL</span>
+                            <span class="tech-item">jQuery</span>
+                            <span class="tech-item">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://roiproject.devdi.in/" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-outline">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NGO Multi-Admin System -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./images/NGO Management System.jpeg" alt="NGO Admin Portal">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">NGO Management System</h3>
+                        <p class="project-description">
+                            A multi-level admin-based platform for NGOs to manage volunteers, donations, and regional
+                            activities across states/districts.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-item">PHP</span>
+                            <span class="tech-item">MySQL</span>
+                            <span class="tech-item">jQuery</span>
+                            <span class="tech-item">AJAX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://shaktifoundation.devdi.in/" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-outline">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>roshanchauhan7398945296@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p>+91 7398945296</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Gorakhpur, Uttar Pradesh, India</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/" class="social-link" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/roshan-chauhan-" class="social-link" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/ROSHANC39744026?t=oLUuFoTkORlNn6_XU9gHqw&s=09" class="social-link"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/roshan_chauhan112/" class="social-link"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#home" class="logo">Roshan Developer</a>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <p class="copyright">© <span id="year"></span> Roshan Developer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="./assets/animations.js"></script>
+    <script src="./assets/font-awesome.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
